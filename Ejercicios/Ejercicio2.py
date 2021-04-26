@@ -1,10 +1,7 @@
-disMe = input("Metros recorridos: ")
-timMi = input("Minutos empleados: ")
+disKm = float(input("Metros recorridos: "))/1000
+timHo = float(input("Minutos empleados: "))/60
 
-disKm = float(disMe)/1000
-TimHo = float(timMi)/60
-
-velocidad50= disKm / timHo
+velocidad = disKm/timHo
 
 if (velocidad > 75):
     print(f"La velocidad de {velocidad:1.2f} Km/h es Alta.")
