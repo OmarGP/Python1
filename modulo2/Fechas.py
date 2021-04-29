@@ -21,18 +21,13 @@ print("===============================================")
 
 print(dt2.strftime("%A, %d %b %Y"))
 
-
-
-
-
-
 print("===============================================")
 
 fecha = input("Escribe tu fecha de nacimiento: ")
 dt3 = datetime.strptime(fecha, "%d-%m-%Y").date()
 años = dt1.year - dt3.year
 
-print("Fecha3: ", dt3)
+print("Fecha: ", dt3)
 print(f"Tienes {años} años.")
 
 
