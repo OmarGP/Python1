@@ -35,7 +35,7 @@ class Alumno:
             
 
 alumno = Alumno("Omar", "García", "Prado")
-
+print(f"{alumno.getNombreCompleto()}")
 fecha = input("Dime tu fecha de nacimiento: ")
 alumno.setFechaNacimiento(fecha)
 print(f"Tu naciste el: " + str(fecha))
