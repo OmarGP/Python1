@@ -1,4 +1,3 @@
-
 var1 = input("Dime tu nombre: ") 
 
 print("¿Como estás " + var1 + "?")
