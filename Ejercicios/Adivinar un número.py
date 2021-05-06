@@ -19,7 +19,7 @@ while True:
         print("No es correcto, vuelve a intentarlo.")
 
 intentos += 1
-print("Lo hiciste en" + str(intentos) "intentos")        
+print("Lo hiciste en " + str(intentos) + " intentos")        
 
 print("Fin del WHILE")
 

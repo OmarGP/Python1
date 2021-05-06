@@ -1,5 +1,7 @@
 from pymongo import MongoClient
 from pprint import pprint
+import sys, json
+
 
 ## Establecer conexión con MongoDB (motor de base de datos)
 client = MongoClient("localhost", 27017)
@@ -75,16 +77,55 @@ customer = {
 #idNewDocument = collection.insert_one(customer).inserted_id
 #print('ID Nuevo Documento: ', idNewDocument)
 
-query = ("CustomerID": "DEMO1")
-newValues = (
-    "$set" : {
-        "CompanyName": "Catering Amanda, SL",
-        "Address": "Calle Monforte de Lemos, 39",
-        "Phone": "(91) 732 69 10"
-        }
-    )
+#
+class Customer:
 
-result = collection.update_one(query, newValues)
-print(result.matched_count, ' elementos encontrados.')
-print(result.modified_count, ' elementos modificados.')
-print(result)
+    _id = None
+    CustomerID = None
+    CompanyName = None
+    ContactName = None
+    ContactTitle = None
+    Address = None
+    City = None
+    Region = None
+    PostalCode = None
+    Country = None
+    Phone = None
+    Fax = None
+
+
+cliente = Customer()
+
+cliente._id = None
+cliente.CustomerID = "DEMO3"
+cliente.CompanyName = "Un Dos Tresm, SL"
+cliente.ContactName = "Borja Cabeza"
+cliente.ContactTitle = "Generente"
+cliente.Address = "Calle Gran Vía, 16"
+cliente.Region = "Madrid"
+cliente.City = "Madrid"
+cliente.Country = "Spain"
+cliente.PostalCode = "28024"
+cliente.Phone = "(91) 200 20 20"
+cliente.Fax = "(91) 300 30 30"
+
+#pprint(cliente.__dict__)
+#pprint(json.dumps(cliente, default=lambda x: x._dict_))
+
+idNewDocument = client.Northwind.customers.insert_one(cliente.__dict__).inserted_id
+#print('ID Nuevo Documento: ' + (idNewDocument))
+
+
+#query = ("CustomerID": "DEMO1")
+#newValues = (
+#    "$set" : {
+#        "CompanyName": "Catering Amanda, SL",
+#        "Address": "Calle Monforte de Lemos, 39",
+ #       "Phone": "(91) 732 69 10"
+#        }
+#    )
+
+##result = collection.update_one(query, newValues)
+#print(result.matched_count, ' elementos encontrados.')
+#print(result.modified_count, ' elementos modificados.')
+#print(result)
