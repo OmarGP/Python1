@@ -23,8 +23,8 @@ while True:
         print(f"Alto, prueba con un número mas bajo.")
         print("=============================================")
 #Añade la palabra Demasiado si la diferencia entre el valor y contenido de la variable numero es de 25 o más.
+while (numero == (numero + 25 or numero -25)):
+    print(f"Demasiado, el número ingresado sobrepasa  con 25 o más al correcto")
 
-
-
-
+print("")
 print("Lo has hecho en: " + str(intentos) + " intentos.")
